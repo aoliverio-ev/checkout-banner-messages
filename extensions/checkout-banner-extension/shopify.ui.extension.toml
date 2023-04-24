@@ -1,0 +1,23 @@
+type = "checkout_ui_extension"
+name = "checkout-banner-extension"
+
+extension_points = [
+  'Checkout::Dynamic::Render',
+  'Checkout::DeliveryAddress::RenderBefore'
+]
+
+[settings]
+  [[settings.fields]]
+  key = "title"
+  type = "single_line_text_field"
+  name = "Custom Message"
+  description = "Enter text for custom message."
+
+  [[settings.fields]]
+  key = "size"
+  type = "single_line_text_field"
+  name = "Size"
+    [[settings.fields.validations]]
+    name = "choices"
+    value = "[\"extraSmall\", \"small\", \"base\", \"large\", \"extraLarge\"]"
+
